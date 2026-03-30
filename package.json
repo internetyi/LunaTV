@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "preview": "pnpm exec opennextjs-cloudflare build && pnpm exec opennextjs-cloudflare preview",
-    "deploy": "pnpm exec opennextjs-cloudflare build && pnpm exec opennextjs-cloudflare deploy",
+    "preview": "pnpm exec opennextjs-cloudflare build --no-config-prompt && pnpm exec opennextjs-cloudflare preview",
+    "deploy": "pnpm exec opennextjs-cloudflare build --no-config-prompt && pnpm exec opennextjs-cloudflare deploy",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
@@ -20,7 +20,7 @@
     "gen:manifest": "node scripts/generate-manifest.js",
     "postbuild": "echo 'Build completed - sitemap generation disabled'",
     "prepare": "husky install",
-    "pages:build": "pnpm exec opennextjs-cloudflare build && pnpm exec opennextjs-cloudflare deploy"
+    "pages:build": "pnpm exec opennextjs-cloudflare build --no-config-prompt&& pnpm exec opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
