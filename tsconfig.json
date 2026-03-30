@@ -8,8 +8,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "Node16",
-    "moduleResolution": "node16",
+    "module": "esnext",                // 改为 esnext，支持 ES 模块
+    "moduleResolution": "bundler",     // Next.js 推荐的模块解析方式
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -27,5 +27,8 @@
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"],
-  "moduleResolution": ["node_modules", ".next", "node"]
+  "ts-node": {
+    "esm": true,                       // 允许 ts-node 加载 ES 模块
+    "experimentalSpecifierResolution": "node"
+  }
 }
